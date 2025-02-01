@@ -1,8 +1,11 @@
 import Link from "next/link";
+import "../globals.css";
 
-export default function Layout({ children }) {
+export default function DashboardLayout({ children }) {
     return(
-        <section className="min-h-screen flex">
+        <html>
+            <body>
+            <section className="min-h-screen flex">
             <div className="w-1/4 border-r-2 border-r-purple-600">
             <Link className="p-2 text-center w-full block hover:bg-purple-300" href="/dashboard/settings">
             Settings
@@ -12,6 +15,9 @@ export default function Layout({ children }) {
             </Link>
             </div>
             <div className="w-3/4">{children}</div>
-            </section>
+            </section>      
+            </body>
+        </html>
+       
     )
 }

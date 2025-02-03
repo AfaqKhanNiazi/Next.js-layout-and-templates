@@ -13,6 +13,9 @@ export default function Header() {
             <Link className={`link ${pathname === "/dashboard" ? "active underline" : ""}`} href="/dashboard">
             Dashboard
             </Link>
+            <Link className={`link ${pathname === "/quotes" ? "active underline" : ""}`} href="/quotes">
+            Quotes
+            </Link>
             <Link className={`link ${pathname === "/blogs" ? "active underline" : ""}`} href="/blogs">
             Blogs
             </Link>

@@ -7,21 +7,23 @@ export const metadata = {
   };
 
 
+  export const revalidate = 10
+
 const Quotes = async () => {
-    let quotes = await fetch("https://dummyjson.com/quotes")
+    let quotes = await fetch("https://dummyjson.com/quotes/random")
     quotes = await quotes.json();    
     return (
                 <div className="p-10">
                     <h1 className="font-bold text-3xl text-center">Quotes</h1>
-                    {
+                    {/* {
                         quotes.quotes.map((data) => (
                         
-                       <Link key={data.id} href={`/quotes/${data.id}`}> 
-                       <QuoteCard author={data.author} quote={data.quote}/>
-                       </Link> 
+                       <Link key={data.id} href={`/quotes/${data.id}`}>  */}
+                       <QuoteCard author={quotes.author} quote={quotes.quote}/>
+                       {/* </Link>  */}
 
                         
-                    ))}
+                    {/* ))} */}
                 </div>
     );
 };

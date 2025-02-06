@@ -8,8 +8,19 @@ export const metadata = {
 
 
 const Quotes = async () => {
-    let quotes = await fetch("https://dummyjson.com/quotes",{cache : "no-cache"})
-    quotes = await quotes.json();    
+    let quotes = await fetch("https://dummyjson.com/quotes",{ 
+      cache : "no-cache"});
+
+      if (!quotes.ok) {
+       throw new Error("API Not Working")
+      }
+
+    quotes = await quotes.json();   
+    console.log(quotes);
+     
+
+
+    
     return (
                 <div className="p-10">
                     <h1 className="font-bold text-3xl text-center">Quotes</h1>
